@@ -1,0 +1,157 @@
+/* reset */
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+li {
+  list-style: none;
+}
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+address,
+em,
+i,
+cite {
+  font-style: normal;
+}
+table {
+  border-collapse: collapse;
+}
+table caption {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+i[class^="fa"] {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+i[class^="fa"] span {
+  position: absolute;
+  left: -9999px;
+}
+.ir-hidden {
+  position: absolute;
+  left: -9999px;
+}
+.mobile {
+  display: none !important;
+}
+br.only-m {
+  content: "";
+}
+br.only-m::after {
+  content: "\00a0";
+}
+
+/* common */
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  border-bottom: 1px solid #034ea2;
+}
+
+#header h1 {
+  position: absolute;
+  left: 13%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  z-index: 1000;
+}
+#header h1 a {
+  display: block;
+  /*이미지와 링크사이에 조금 틈있는거 없애기*/
+}
+
+#gnb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+#gnb > ul > li {
+  float: left;
+}
+
+#gnb > ul > li + li {
+  margin-left: 40px;
+}
+
+#gnb > ul > li > a {
+  display: block;
+  font-size: 21px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  line-height: 50px;
+}
+
+#gnb > ul > li > ul {
+  position: absolute;
+  top: 100px;
+}
+
+#gnb > ul > li > ul > li {
+  float: left;
+}
+
+#gnb > ul > li > ul > li > ul {
+  position: absolute;
+  top: 100px;
+}
+
+#top-menu {
+  position: absolute;
+  right: 18%;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  transform: translate(50%, -50%);
+  font-size: 14px;
+}
+
+#top-menu > li + li {
+  margin: 0 20px;
+}
+#top-menu > ul > li {
+  float: left;
+}
