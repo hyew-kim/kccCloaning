@@ -55,13 +55,13 @@ table caption {
   width: 0;
   height: 0;
 }
-i[class^='fa'] {
+i[class^="fa"] {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
 }
-i[class^='fa'] span {
+i[class^="fa"] span {
   position: absolute;
   left: -9999px;
 }
@@ -73,15 +73,16 @@ i[class^='fa'] span {
   display: none !important;
 }
 br.only-m {
-  content: '';
+  content: "";
 }
 br.only-m::after {
-  content: '\00a0';
+  content: "\00a0";
 }
 
 /* common */
 body {
-  font-family: 'NanumSquare', '맑은 고딕', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', '돋움', 'gulim', '굴림', Helvetica, sans-serif;
+  font-family: "NanumSquare", "맑은 고딕", "Malgun Gothic", "Nanum Gothic",
+    "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif;
 }
 
 #header {
@@ -94,6 +95,9 @@ body {
   z-index: 1000;
   background-color: white;
 }
+#header.small {
+  height: 45px;
+}
 
 #header h1 {
   position: absolute;
@@ -102,6 +106,7 @@ body {
   transform: translate(-100%, -50%);
   z-index: 1000;
 }
+
 #header h1 a {
   display: block;
   /*이미지와 링크사이에 조금 틈있는거 없애기*/
@@ -140,15 +145,19 @@ body {
 #gnb > ul > li + li {
   margin-left: 40px;
 }
-
 #gnb > ul > li > a {
   display: block;
-  font-size: 21px;
-  color: rgba(0, 0, 0, 0.7);
-  font-weight: 700;
+  font-size: 19px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
   line-height: 50px;
+  box-sizing: border-box;
+  transition: all 0.2s;
 }
-
+#gnb > ul > li.open > a,
+#gnb > ul > li > a:hover {
+  border-bottom: 2px solid #034ea2;
+}
 #top-menu {
   position: absolute;
   right: 18%;
@@ -172,7 +181,7 @@ body {
   top: 100%;
   left: 50%;
   transform: translate(-50%, 0);
-  height: 400px;
+  height: 350px;
   width: 1200px;
   background-color: #e0e0e0;
 }
@@ -193,7 +202,7 @@ body {
 }
 
 #header > section > p::before {
-  content: '';
+  content: "";
   width: 100px;
   height: 0.9px;
   background-color: #ffff;
@@ -213,32 +222,135 @@ body {
   top: 0;
   transform: translate(-50%, 0);
   z-index: 100;
-  width: 50%;
+  width: calc(50% + 25px);
   padding: 20px 50px;
   box-sizing: border-box;
-  background-color: seagreen;
 }
 
 .sub-nav > ul > li {
   float: left;
   width: 100px;
-  background-color: sienna;
 }
-
+.sub-nav > ul > li + li {
+  margin-left: 5px;
+}
 .sub-nav > ul > li > a {
   display: block;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: 10px;
+  transition: color 0.3s;
 }
-.sub-nav > ul > li > a > ul > li + li {
-  margin-top: 15px;
+.sub-nav > ul > li.column {
+  position: absolute;
+  right: 55px;
+  top: 55%;
+}
+.sub-nav > ul > li > ul > li {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.sub-nav > ul > li > ul > li > a {
+  display: block;
+  transition: color 0.3s;
+}
+.sub-nav > ul > li > ul > li > a:hover,
+.sub-nav > ul > li > a:hover {
+  color: #034ea2;
+}
+.sub-nav > ul.exception > li:nth-child(n + 4) {
+  clear: both;
+  position: relative;
+  left: 350px;
+  bottom: 95px;
+  width: 200px;
+  margin-bottom: 10px;
 }
 
-/*
-.sub-nav > ul > li:last-child {
+#main-visual {
+  width: 100%;
+  height: 650px;
+}
+#main-visual div.image-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#main-visual div.image-slide ul.slide {
   position: absolute;
-  right: 68px;
-  top: 55%;
-}*/
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#main-visual div.image-slide ul.slide li {
+  background: url("/img/img-slide/slide00.jpeg") center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#quick-menu {
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  width: 100px;
+  height: 450px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 4px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+}
+
+#quick-menu a {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffff;
+  font-size: 11px;
+  padding: 5px 5px;
+  text-align: center;
+}
+#quick-menu ul {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#quick-menu ul li {
+  background: url("/img/quickMenu/icon00.jpg") center center no-repeat;
+  width: 100px;
+  height: 50px;
+  background-size: contain;
+  position: relative;
+}
+#quick-menu ul li:nth-child(2) {
+  background: url("/img/quickMenu/icon01.jpg") center center no-repeat;
+  background-size: contain;
+}
+#quick-menu ul li:nth-child(3) {
+  background: url("/img/quickMenu/icon02.jpg") center center no-repeat;
+  background-size: contain;
+}
+#quick-menu ul li:nth-child(4) {
+  background: url("/img/quickMenu/icon03.jpg") center center no-repeat;
+  background-size: contain;
+}
+#quick-menu ul li:last-child {
+  background: url("/img/quickMenu/icon04.jpg") center center no-repeat;
+  background-size: contain;
+}
+#quick-menu ul li + li {
+  margin-top: 25px;
+}
+#quick-menu ul li p {
+  font-size: 10px;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+}
