@@ -80,6 +80,10 @@ br.only-m::after {
 }
 
 /* common */
+body {
+  font-family: 'NanumSquare', '맑은 고딕', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', '돋움', 'gulim', '굴림', Helvetica, sans-serif;
+}
+
 #header {
   position: fixed;
   left: 0;
@@ -145,28 +149,6 @@ br.only-m::after {
   line-height: 50px;
 }
 
-#gnb > ul > li > ul {
-  position: absolute;
-  top: 200px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 100%;
-  text-align: center;
-}
-
-#gnb > ul > li > ul > li {
-  display: inline-block;
-}
-
-#gnb > ul > li > ul > li + li {
-  margin-left: 40px;
-}
-
-#gnb > ul > li > ul > li > ul {
-  position: absolute;
-  top: 500px;
-}
-
 #top-menu {
   position: absolute;
   right: 18%;
@@ -184,13 +166,79 @@ br.only-m::after {
   float: left;
 }
 
-/*{
-  content: "";
+#header > section {
+  display: none;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translate(-50%, 0);
   height: 400px;
-  width: 42%;
+  width: 1200px;
   background-color: #e0e0e0;
+}
+#header > section.open {
+  display: block;
+}
+#header > section > h2 {
+  position: absolute;
+  background-color: #2765a9;
+  color: #ffff;
+  font-size: 23px;
+  font-weight: 500;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+
+#header > section > p::before {
+  content: '';
+  width: 100px;
+  height: 0.9px;
+  background-color: #ffff;
+  position: absolute;
+}
+#header > section > p {
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  left: 97px;
+  top: 50px;
+  padding-top: 5px;
+}
+#header > section > .sub-nav {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  z-index: 100;
+  width: 50%;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  background-color: seagreen;
+}
+
+.sub-nav > ul > li {
+  float: left;
+  width: 100px;
+  background-color: sienna;
+}
+
+.sub-nav > ul > li > a {
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+}
+.sub-nav > ul > li > a > ul > li + li {
+  margin-top: 15px;
+}
+
+/*
+.sub-nav > ul > li:last-child {
+  position: absolute;
+  right: 68px;
+  top: 55%;
 }*/
