@@ -55,13 +55,13 @@ table caption {
   width: 0;
   height: 0;
 }
-i[class^="fa"] {
+i[class^='fa'] {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
 }
-i[class^="fa"] span {
+i[class^='fa'] span {
   position: absolute;
   left: -9999px;
 }
@@ -73,16 +73,15 @@ i[class^="fa"] span {
   display: none !important;
 }
 br.only-m {
-  content: "";
+  content: '';
 }
 br.only-m::after {
-  content: "\00a0";
+  content: '\00a0';
 }
 
 /* common */
 body {
-  font-family: "NanumSquare", "맑은 고딕", "Malgun Gothic", "Nanum Gothic",
-    "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif;
+  font-family: 'NanumSquare', '맑은 고딕', 'Malgun Gothic', 'Nanum Gothic', 'Dotum', '돋움', 'gulim', '굴림', Helvetica, sans-serif;
 }
 
 #header {
@@ -94,7 +93,9 @@ body {
   border-bottom: 1px solid #034ea2;
   z-index: 1000;
   background-color: white;
+  min-width: 1024px;
 }
+
 #header.small {
   height: 45px;
 }
@@ -136,6 +137,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
+  min-width: 750px;
 }
 
 #gnb > ul > li {
@@ -143,11 +145,11 @@ body {
 }
 
 #gnb > ul > li + li {
-  margin-left: 40px;
+  margin-left: 30px;
 }
 #gnb > ul > li > a {
   display: block;
-  font-size: 19px;
+  font-size: 21px;
   color: rgba(0, 0, 0, 0.6);
   font-weight: 600;
   line-height: 50px;
@@ -173,6 +175,12 @@ body {
 }
 #top-menu > ul > li {
   float: left;
+}
+
+@media screen and (max-width: 1300px) {
+  #gnb > ul > li + li {
+    margin-left: 20px;
+  }
 }
 
 #header > section {
@@ -202,7 +210,7 @@ body {
 }
 
 #header > section > p::before {
-  content: "";
+  content: '';
   width: 100px;
   height: 0.9px;
   background-color: #ffff;
@@ -268,8 +276,13 @@ body {
   margin-bottom: 10px;
 }
 
-#main {height: 100%; overflow: auto;}
-#main .wrapper {padding-top: 85px;}
+#main {
+  height: 100%;
+  overflow: auto;
+}
+#main .wrapper {
+  padding-top: 85px;
+}
 #main-visual {
   width: 100%;
   height: 750px;
@@ -279,26 +292,116 @@ body {
   height: 100%;
   position: relative;
 }
-#main-visual div.image-slide ul.slide {
+.image-slide ul.slide {
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
 }
-#main-visual div.image-slide ul.slide li {
-  background: url("/img/img-slide/slide00.jpeg") center center no-repeat;
+.image-slide ul.slide li {
+  background: url('/img/img-slide/slide00.jpeg') center center no-repeat;
   background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
+  display: none;
+}
+.image-slide ul.slide li:nth-child(2) {
+  background: url('/img/img-slide/slide01.jpg') center center no-repeat;
+  background-size: cover;
+}
+.image-slide ul.slide li:nth-child(3) {
+  background: url('/img/img-slide/slide02.jpg') center center no-repeat;
+  background-size: cover;
+}
+.image-slide ul.slide li:last-child {
+  background: url('/img/img-slide/slide03.jpg') center center no-repeat;
+  background-size: cover;
+}
+.image-slide ul.slide li > p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #ffff;
+  font-weight: 500;
+  text-align: center;
+  min-width: 830px;
+  text-shadow: 1px 0 5px rgb(0 0 0 / 70%);
+}
+
+.image-slide ul.slide li > p > em {
+  font-weight: 600;
+  font-size: 50px;
+  position: relative;
+  top: -15px;
+}
+.image-slide ul.slide li.on {
+  display: block;
+}
+
+.image-slide ul.indicator {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.image-slide ul.indicator > li {
+  display: inline-block;
+}
+
+.image-slide ul.indicator > li > a {
+  display: block;
+  background-color: #888;
+  width: 90px;
+  height: 3px;
+  text-indent: -9999px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.image-slide ul.indicator > li.on > a {
+  background-color: #ffffff;
+}
+
+.image-slide p.control a.prev,
+.image-slide p.control a.next {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.image-slide p.control a.prev {
+  left: 30px;
+}
+.image-slide p.control a.next {
+  right: 30px;
+}
+.image-slide p.control a.play {
+  position: absolute;
+  bottom: 15px;
+  right: 30%;
+  transform: translate(-50%, 0);
+}
+.image-slide p.control a.play > img {
+  display: none;
+}
+.image-slide p.control a.play > img + img {
+  display: block;
+}
+.image-slide p.control a.play.on > img:first-child {
+  display: block;
+}
+.image-slide p.control a.play.on > img + img {
+  display: none;
 }
 #quick-menu {
   position: absolute;
   top: 200px;
-  right: 50px;
+  right: 100px;
   width: 100px;
   height: 450px;
   background: white;
@@ -328,28 +431,28 @@ body {
 #quick-menu ul li + li {
   margin-top: 25px;
 }
-#quick-menu ul li > a{
+#quick-menu ul li > a {
   width: 100%;
   height: 100%;
   display: block;
-  background: url("/img/quickMenu/icon00.jpg") center center no-repeat;
+  background: url('/img/quickMenu/icon00.jpg') center center no-repeat;
   background-size: contain;
   position: relative;
 }
 #quick-menu ul li:nth-child(2) > a {
-  background: url("/img/quickMenu/icon01.jpg") center center no-repeat;
+  background: url('/img/quickMenu/icon01.jpg') center center no-repeat;
   background-size: contain;
 }
-#quick-menu ul li:nth-child(3) > a{
-  background: url("/img/quickMenu/icon02.jpg") center center no-repeat;
+#quick-menu ul li:nth-child(3) > a {
+  background: url('/img/quickMenu/icon02.jpg') center center no-repeat;
   background-size: contain;
 }
-#quick-menu ul li:nth-child(4) > a{
-  background: url("/img/quickMenu/icon03.jpg") center center no-repeat;
+#quick-menu ul li:nth-child(4) > a {
+  background: url('/img/quickMenu/icon03.jpg') center center no-repeat;
   background-size: contain;
 }
-#quick-menu ul li:last-child > a{
-  background: url("/img/quickMenu/icon04.jpg") center center no-repeat;
+#quick-menu ul li:last-child > a {
+  background: url('/img/quickMenu/icon04.jpg') center center no-repeat;
   background-size: contain;
 }
 #quick-menu ul li > a > p {
@@ -360,4 +463,10 @@ body {
   transform: translate(-50%, 0);
   width: 100%;
   text-align: center;
+  color: rgba(87, 67, 67, 0.7);
+}
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  #quick-menu {
+    right: 10px;
+  }
 }
