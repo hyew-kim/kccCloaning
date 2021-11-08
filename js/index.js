@@ -25,3 +25,41 @@ function scrollHandle() {
 }
 
 /*img-slide*/
+
+var totalSlide = $('.image-slide .slide li').length;
+var slideNow = 0;
+var slidePrev = 0;
+var slideNext = 0;
+var slideFirst = 0;
+var isTimerOn = true;
+var timerId = '';
+var timerSpeed = 5;
+
+if (isTimerOn) $('.image-slide .control a.play').addClass('on');
+else $('.image-slide .control a.play').removeClass('on');
+
+showSlide(slideFirst);
+
+$('.image-slide .control a.prev').on('click', function () {
+  showSlide(slidePrev);
+});
+
+$('.image-slide .control a.next').on('click', function () {
+  showSlide(slideNext);
+});
+
+$('.image-slide .indicator li a').on('click', function () {
+  var index = $('.image-slide .indicator li').index($(this).parent());
+  showSlide(index);
+});
+
+function showSlide(n) {
+  $('.image-slide .slide > li').removeClass('on');
+  $(`.image-slide .slide > li:eq(${n})`).addClass('on');
+  $('.image-slide .indicator > li').removeClass('on');
+  $(`.image-slide .indicator > li:eq(${n})`).addClass('on');
+
+  slideNow = n;
+  slidePrev = n === 0 ? totalSlide - 1 : n - 1;
+  slideNext = n === totalSlide - 1 ? 0 : n + 1;
+}

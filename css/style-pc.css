@@ -104,7 +104,7 @@ body {
   position: absolute;
   left: 13%;
   top: 50%;
-  transform: translate(-100%, -50%);
+  transform: translate(0, -50%);
   z-index: 1000;
 }
 
@@ -112,7 +112,6 @@ body {
   display: block;
   /*이미지와 링크사이에 조금 틈있는거 없애기*/
 }
-
 #skip-nav {
   position: fixed;
   top: -100px;
@@ -161,14 +160,15 @@ body {
 }
 #top-menu {
   position: absolute;
-  right: 18%;
+  right: 15%;
   display: flex;
   align-items: center;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(0, -50%);
   font-size: 14px;
+  z-index: 100;
+  /*gnb를 min-width 설정 했더니 gnb영역이 넘어와서 클릭이 몇개 안됨*/
 }
-
 #top-menu > li + li {
   margin: 0 20px;
 }
@@ -176,9 +176,21 @@ body {
   float: left;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1800px) {
   #gnb > ul > li + li {
-    margin-left: 20px;
+    margin-left: 18px;
+  }
+  #gnb > ul > li > a {
+    font-size: 20px;
+  }
+  #header > h1 {
+    left: 20px;
+  }
+  #top-menu {
+    right: 12px;
+  }
+  #top-menu > li + li {
+    margin-left: 10px;
   }
 }
 
@@ -244,7 +256,7 @@ body {
 .sub-nav > ul > li > a {
   display: block;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: 10px;
   transition: color 0.3s;
@@ -329,7 +341,7 @@ body {
   color: #ffff;
   font-weight: 500;
   text-align: center;
-  min-width: 830px;
+  min-width: 850px;
   text-shadow: 1px 0 5px rgb(0 0 0 / 70%);
 }
 
