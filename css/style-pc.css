@@ -311,7 +311,7 @@ body {
   top: 0;
 }
 .image-slide ul.slide li {
-  background: url('/img/img-slide/slide00.jpeg') center center no-repeat;
+  background: url('../img/img-slide/slide00.jpeg') center center no-repeat;
   background-size: cover;
   position: absolute;
   width: 100%;
@@ -321,21 +321,21 @@ body {
   display: none;
 }
 .image-slide ul.slide li:nth-child(2) {
-  background: url('/img/img-slide/slide01.jpg') center center no-repeat;
+  background: url('../img/img-slide/slide01.jpg') center center no-repeat;
   background-size: cover;
 }
 .image-slide ul.slide li:nth-child(3) {
-  background: url('/img/img-slide/slide02.jpg') center center no-repeat;
+  background: url('../img/img-slide/slide02.jpg') center center no-repeat;
   background-size: cover;
 }
 .image-slide ul.slide li:last-child {
-  background: url('/img/img-slide/slide03.jpg') center center no-repeat;
+  background: url('../img/img-slide/slide03.jpg') center center no-repeat;
   background-size: cover;
 }
 .image-slide ul.slide li > p {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 80%;
   transform: translate(-50%, -50%);
   font-size: 30px;
   color: #ffff;
@@ -343,6 +343,7 @@ body {
   text-align: center;
   min-width: 850px;
   text-shadow: 1px 0 5px rgb(0 0 0 / 70%);
+  transition: all 0.3s;
 }
 
 .image-slide ul.slide li > p > em {
@@ -354,7 +355,9 @@ body {
 .image-slide ul.slide li.on {
   display: block;
 }
-
+.image-slide ul.slide li.on > p {
+  top: 50%;
+}
 .image-slide ul.indicator {
   position: absolute;
   left: 0;
@@ -397,16 +400,16 @@ body {
   right: 30%;
 }
 .image-slide p.control a.play > img {
-  display: none;
+  display: block;
 }
 .image-slide p.control a.play > img + img {
-  display: block;
+  display: none;
 }
-.image-slide p.control a.play.on > img:first-child {
-  display: block;
+.image-slide p.control a.play.on > img {
+  display: none;
 }
 .image-slide p.control a.play.on > img + img {
-  display: none;
+  display: block;
 }
 #quick-menu {
   position: absolute;
@@ -445,24 +448,24 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  background: url('/img/quickMenu/icon00.jpg') center center no-repeat;
+  background: url('../img/quickMenu/icon00.jpg') center center no-repeat;
   background-size: contain;
   position: relative;
 }
 #quick-menu ul li:nth-child(2) > a {
-  background: url('/img/quickMenu/icon01.jpg') center center no-repeat;
+  background: url('../img/quickMenu/icon01.jpg') center center no-repeat;
   background-size: contain;
 }
 #quick-menu ul li:nth-child(3) > a {
-  background: url('/img/quickMenu/icon02.jpg') center center no-repeat;
+  background: url('../img/quickMenu/icon02.jpg') center center no-repeat;
   background-size: contain;
 }
 #quick-menu ul li:nth-child(4) > a {
-  background: url('/img/quickMenu/icon03.jpg') center center no-repeat;
+  background: url('../img/quickMenu/icon03.jpg') center center no-repeat;
   background-size: contain;
 }
 #quick-menu ul li:last-child > a {
-  background: url('/img/quickMenu/icon04.jpg') center center no-repeat;
+  background: url('../img/quickMenu/icon04.jpg') center center no-repeat;
   background-size: contain;
 }
 #quick-menu ul li > a > p {

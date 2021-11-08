@@ -33,7 +33,7 @@ var slideNext = 0;
 var slideFirst = 0;
 var isTimerOn = true;
 var timerId = '';
-var timerSpeed = 5;
+var timerSpeed = 2000;
 
 if (isTimerOn) $('.image-slide .control a.play').addClass('on');
 else $('.image-slide .control a.play').removeClass('on');
@@ -54,6 +54,7 @@ $('.image-slide .indicator li a').on('click', function () {
 });
 
 function showSlide(n) {
+  clearTimeout(timerId);
   $('.image-slide .slide > li').removeClass('on');
   $(`.image-slide .slide > li:eq(${n})`).addClass('on');
   $('.image-slide .indicator > li').removeClass('on');
@@ -62,4 +63,9 @@ function showSlide(n) {
   slideNow = n;
   slidePrev = n === 0 ? totalSlide - 1 : n - 1;
   slideNext = n === totalSlide - 1 ? 0 : n + 1;
+  if (isTimerOn) {
+    timerId = setTimeout(function () {
+      showSlide(slideNext);
+    }, timerSpeed);
+  }
 }
