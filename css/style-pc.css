@@ -292,7 +292,7 @@ body {
   overflow: auto;
 }
 #main .wrapper {
-  padding-top: 85px;
+  margin-top: 85px;
 }
 #main-visual {
   width: 100%;
@@ -335,7 +335,7 @@ body {
 .image-slide ul.slide li > p {
   position: absolute;
   left: 50%;
-  top: 80%;
+  top: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
   color: #ffff;
@@ -354,9 +354,6 @@ body {
 }
 .image-slide ul.slide li.on {
   display: block;
-}
-.image-slide ul.slide li.on > p {
-  top: 50%;
 }
 .image-slide ul.indicator {
   position: absolute;
