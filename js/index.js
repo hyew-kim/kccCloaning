@@ -8,15 +8,16 @@ scrollHandle();
 $(window).on('scroll', function () {
   scrollHandle();
 });
+var isMouseOver = true;
 
 $('#gnb > ul > li > a').on('mouseover focus', function () {
   var index = $('#gnb > ul > li').index($(this).parent());
+  $(`section`).removeClass('open');
   $(`section:eq(${index})`).addClass('open');
 });
-$('#gnb > ul > li > a').on('mouseleave focusout', function () {
-  $('section').removeClass('open');
+$('section').on('mouseleave focusout', function () {
+  $(`section`).removeClass('open');
 });
-
 function scrollHandle() {
   var scrollAmt = $(window).scrollTop();
   $('#quick-menu').css({ top: `${scrollAmt + 200}px` });
